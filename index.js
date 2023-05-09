@@ -7,6 +7,12 @@ const logoQuestions = [
         type: "input",
         name: "title",
         message: "What would you like your logo to say? (Up to 3 characters)",
+        validate: function(input) {
+            if (input.length > 3) {
+                return "Only a maximum of 3 characters allowed";
+             }
+             return true
+        }
     },
     {
         type: "input",
@@ -28,7 +34,7 @@ const logoQuestions = [
 
 inquirer.prompt(logoQuestions).then((response) => {
 
-    fs.writeFile("test.svg", generateSVG(response), (err) =>
+    fs.writeFile("logo.svg", generateSVG(response), (err) =>
         err ? console.log(err) : console.log("Generated logo.svg")
     );
 });
