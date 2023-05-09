@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateSVG = require("./lib/generateSVG")
+const generateSvg = require("./lib/generateSvg")
 
+//The questions you will be asked after typing node index.js in your terminal
 const logoQuestions = [
     {
         type: "input",
@@ -32,9 +33,10 @@ const logoQuestions = [
     }
 ];
 
+//This is what actually creates the svg file
 inquirer.prompt(logoQuestions).then((response) => {
 
-    fs.writeFile("logo.svg", generateSVG(response), (err) =>
+    fs.writeFile("logo.svg", generateSvg(response), (err) =>
         err ? console.log(err) : console.log("Generated logo.svg")
     );
 });
