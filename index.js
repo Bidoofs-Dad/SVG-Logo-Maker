@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateSVG = require("./lib/generateSVG")
 
 const logoQuestions = [
     {
@@ -20,14 +21,14 @@ const logoQuestions = [
     },
     {
         type: "input",
-        name: "shapecolor",
+        name: "shapeColor",
         message: "What color would you like your shape to be? (Can be a color or a hexadecimal code)",
     }
 ];
 
 inquirer.prompt(logoQuestions).then((response) => {
 
-    fs.writeFile("test.svg", logoRequested, (err) =>
+    fs.writeFile("test.svg", generateSVG(response), (err) =>
         err ? console.log(err) : console.log("Generated logo.svg")
     );
 });
