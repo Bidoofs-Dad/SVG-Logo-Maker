@@ -26,6 +26,10 @@ I didn't really run into many issues this time around thanfully! I was able to u
 
 I will provide a video of the working application below, followed by a couple screenshots!
 
+
+
+https://github.com/Bidoofs-Dad/SVG-Logo-Maker/assets/126542828/2e207c53-7d72-4ae0-b6c6-00682ebcd998
+
 <video width="1000" controls>
   <source src="images\demonstrating app.mp4" type="video/mp4">
 </video>
